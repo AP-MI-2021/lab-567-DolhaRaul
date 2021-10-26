@@ -1,4 +1,4 @@
-from Domain.cheltuieli import creeaza_cheltuiala, get_str, get_nr_ap, get_suma, get_data, get_tipul
+from Domain.cheltuieli import creeaza_cheltuiala, get_str, get_nr_ap, get_suma, get_data, get_tipul, get_id
 from Logic.crud import adaugare, read, modif, stergere
 
 
@@ -9,12 +9,13 @@ def show_menu():
 
 
 def handle_add(lst_cheltuieli):
+    id_ap = int(input('Introduceti id-ul cheltuielii aici: '))
     nr_ap = int(input('Introduceti numarul apartamentului aici: '))
     suma = int(input('Introduceti suma cheltuielii aici: '))
     data = input('Introduceti data in care s - a emis cheltuiala in format DD.MM.YYYY aici: ')
     tip = input('Introduceti tipul cheltuielii aici: ')
-    new_cheltuiala = creeaza_cheltuiala(nr_ap, suma, data, tip)
-    lst_cheltuieli = adaugare(lst_cheltuieli, nr_ap, suma, data, tip)
+    new_cheltuiala = creeaza_cheltuiala(id_ap, nr_ap, suma, data, tip)
+    lst_cheltuieli = adaugare(lst_cheltuieli,id_ap, nr_ap, suma, data, tip)
     return lst_cheltuieli
 
 def handle_show_all(lst_cheltuieli):
@@ -23,9 +24,10 @@ def handle_show_all(lst_cheltuieli):
 
 
 def handle_show_details(lst_cheltuieli):
-    nr_ap = int(input('Introduceti aici Numarul cheltuielii despre care vrem sa aflam detalii: '))
-    cheltuiala = read(lst_cheltuieli, nr_ap)
+    id_ap = int(input('Introduceti aici Numarul cheltuielii despre care vrem sa aflam detalii: '))
+    cheltuiala = read(lst_cheltuieli, id_ap)
     if cheltuiala:#exista aceasta cheltuiala, nu am introdus ceva ce nu exista
+        print(f'Id-ul cheltuielii:{get_id(cheltuiala)}')
         print(f'Nr_apartament:{get_nr_ap(cheltuiala)}')
         print(f'Suma:{get_suma(cheltuiala)}')
         print(f'Data:{get_data(cheltuiala)}')
@@ -35,17 +37,18 @@ def handle_show_details(lst_cheltuieli):
 
 
 def handle_modif(lst_cheltuieli):
+    id_ap = int(input('Introduceti id-ul cheltuielii care doriti sa se modifice: '))
     nr_ap = int(input('Dati numarul apartamentului al cheltuielii care se actualizeaza: '))
     suma = int(input('Dati aici noua suma a cheltuielii: '))
     data = input('Dati aici noua data a cheltuielii: ')
     tip = input('Dati aici noul tip al cheltuielii: ')
-    new_cheltuiala = creeaza_cheltuiala(nr_ap, suma, data, tip)
+    new_cheltuiala = creeaza_cheltuiala(id_ap, nr_ap, suma, data, tip)
     return modif(lst_cheltuieli, new_cheltuiala)
 
 
 def handle_delete(lst_cheltuieli):
-    nr_ap = int(input('Dati aici numele cheltuielii care doriti sa se modifice: '))
-    lst_cheltuieli = stergere(lst_cheltuieli, nr_ap)
+    id_ap = int(input('Dati aici id-ul cheltuielii care doriti sa se modifice: '))
+    lst_cheltuieli = stergere(lst_cheltuieli, id_ap)
     print("S-a sters cu succes cheltuiala!")
     return lst_cheltuieli
 

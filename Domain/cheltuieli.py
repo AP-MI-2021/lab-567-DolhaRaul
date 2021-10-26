@@ -1,4 +1,4 @@
-def creeaza_cheltuiala(nr_apartament: int, suma: float, data: str, tipul: str):
+def creeaza_cheltuiala(id:int, nr_apartament: int, suma: float, data: str, tipul: str):
     '''
     Creeaza o cheltuiala in care sa fie specificata nr_apartament, suma, data(in format string: 'DD.MM.YYYY') si tipul
     care poate fi:cheltuiala, intretinere sau alte cheltuieli
@@ -9,15 +9,24 @@ def creeaza_cheltuiala(nr_apartament: int, suma: float, data: str, tipul: str):
     :return: Creeaza cheltuiala cu datele introduse
     '''
     return{
+        'id':id,
         'nr_ap':nr_apartament,
         'suma':suma,
         'data':data,
         'tip':tipul,
     }
 
+def get_id(cheltuiala):
+    '''
+    Returneaza id ul cheltuielii
+    :param cheltuiala: O cheltuiala introdusa de utilizator
+    :return: Id ul cheltuielii
+    '''
+    return cheltuiala['id']
+
 def get_nr_ap(cheltuiala):
     '''
-    Returneaza nr_ap al cheltuielii(se comporta ca un id)
+    Returneaza nr_ap al cheltuielii
     :param cheltuiala: O cheltuiala introdusa de utilizator
     :return: Nr apartamentului in care e trecut cheltuiala
     '''
@@ -48,4 +57,4 @@ def get_tipul(cheltuiala):
     return cheltuiala['tip']
 
 def get_str(cheltuiala):
-    return f'Nr_apartamentului este {get_nr_ap(cheltuiala)}, cu suma {get_suma(cheltuiala)}, data {get_data(cheltuiala)} si tipul {get_tipul(cheltuiala)}'
+    return f'Id ul cheltuielii este {get_id(cheltuiala)}, cu Nr_apartamentului {get_nr_ap(cheltuiala)}, suma {get_suma(cheltuiala)}, data {get_data(cheltuiala)} si tipul {get_tipul(cheltuiala)}'
