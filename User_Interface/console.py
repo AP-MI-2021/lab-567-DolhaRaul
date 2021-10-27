@@ -26,14 +26,14 @@ def handle_show_all(lst_cheltuieli):
 def handle_show_details(lst_cheltuieli):
     id_ap = int(input('Introduceti aici Numarul cheltuielii despre care vrem sa aflam detalii: '))
     cheltuiala = read(lst_cheltuieli, id_ap)
-    if cheltuiala:#exista aceasta cheltuiala, nu am introdus ceva ce nu exista
+    if cheltuiala != lst_cheltuieli :#exista aceasta cheltuiala, nu am introdus ceva ce nu exista
         print(f'Id-ul cheltuielii:{get_id(cheltuiala)}')
         print(f'Nr_apartament:{get_nr_ap(cheltuiala)}')
         print(f'Suma:{get_suma(cheltuiala)}')
         print(f'Data:{get_data(cheltuiala)}')
         print(f'Tip:{get_tipul(cheltuiala)}')
     else:
-        print('Nu exista o asmenea cheltuiala, este gresita!')
+        print('Nu exista o asmenea cheltuiala, este gresita/stearsa deja !')
 
 
 def handle_modif(lst_cheltuieli):
@@ -85,4 +85,6 @@ def run_ui(lst_cheltuieli):
             lst_cheltuieli = handle_crud(lst_cheltuieli)
         elif optiune == 'x':
             break
+        else:
+            print('Optiune invalida')
     return lst_cheltuieli

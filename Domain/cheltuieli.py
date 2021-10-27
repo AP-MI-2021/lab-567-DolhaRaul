@@ -8,13 +8,7 @@ def creeaza_cheltuiala(id:int, nr_apartament: int, suma: float, data: str, tipul
     :param tipul:Tipul cheltuielii(va fi precizat, in format string)
     :return: Creeaza cheltuiala cu datele introduse
     '''
-    return{
-        'id':id,
-        'nr_ap':nr_apartament,
-        'suma':suma,
-        'data':data,
-        'tip':tipul,
-    }
+    return [id, nr_apartament, suma, data, tipul]
 
 def get_id(cheltuiala):
     '''
@@ -22,7 +16,7 @@ def get_id(cheltuiala):
     :param cheltuiala: O cheltuiala introdusa de utilizator
     :return: Id ul cheltuielii
     '''
-    return cheltuiala['id']
+    return cheltuiala[0]
 
 def get_nr_ap(cheltuiala):
     '''
@@ -30,7 +24,7 @@ def get_nr_ap(cheltuiala):
     :param cheltuiala: O cheltuiala introdusa de utilizator
     :return: Nr apartamentului in care e trecut cheltuiala
     '''
-    return cheltuiala['nr_ap']
+    return cheltuiala[1]
 
 def get_suma(cheltuiala):
     '''
@@ -38,7 +32,7 @@ def get_suma(cheltuiala):
     :param cheltuiala: O cheltuiala introdusa de utilizator
     :return: Suma acesteia
     '''
-    return cheltuiala['suma']
+    return cheltuiala[2]
 
 def get_data(cheltuiala):
     '''
@@ -46,7 +40,7 @@ def get_data(cheltuiala):
     :param cheltuiala: O cheltuiala introdusa de utilizator
     :return: Data acesteia
     '''
-    return cheltuiala['data']
+    return cheltuiala[3]
 
 def get_tipul(cheltuiala):
     '''
@@ -54,7 +48,7 @@ def get_tipul(cheltuiala):
     :param cheltuiala: O cheltuiala introdusa de utilizator
     :return: Tipul acesteia
     '''
-    return cheltuiala['tip']
+    return cheltuiala[4]
 
 def get_str(cheltuiala):
     return f'Id ul cheltuielii este {get_id(cheltuiala)}, cu Nr_apartamentului {get_nr_ap(cheltuiala)}, suma {get_suma(cheltuiala)}, data {get_data(cheltuiala)} si tipul {get_tipul(cheltuiala)}'
