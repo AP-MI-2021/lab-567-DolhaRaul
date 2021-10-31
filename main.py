@@ -1,5 +1,6 @@
 from Logic.crud import adaugare
 from Tests.Test_Adunare_val_pt_data import test_adunare_valoare_pt_data
+from Tests.Test_Afis_sume_lunare import test_get_sume_lunare
 from Tests.Test_Crud import test_adaugare, test_crud
 from Tests.Test_Ordonare_desc import test_ordonare
 from Tests.Test_Stergere_cheltuilei import test_Stergere_cheltuieli
@@ -25,4 +26,5 @@ if __name__ == '__main__':
     test_adunare_valoare_pt_data()
     test_find_out_biggest_cheltuiala_for_tip()
     test_ordonare()
+    test_get_sume_lunare()
     main()
