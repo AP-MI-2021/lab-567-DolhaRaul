@@ -5,8 +5,13 @@ from Tests.Test_Crud import test_adaugare, test_crud
 from Tests.Test_Ordonare_desc import test_ordonare
 from Tests.Test_Stergere_cheltuilei import test_Stergere_cheltuieli
 from Tests.Test_find_out_biggest_cheltuiala_for_tip import test_find_out_biggest_cheltuiala_for_tip
+from User_Interface.command_line_console import run_in_line_console
 from User_Interface.console import run_ui
 
+def meniuri():
+    print('1.Meniul vechi')
+    print('2.Meniul nou')
+    print('x.Exit')
 
 def main():
     lst_cheltuieli = []
@@ -17,7 +22,17 @@ def main():
     lst_cheltuieli = adaugare(lst_cheltuieli, 4, 4, 400, '27.11.2004', 'intretinere')
     lst_cheltuieli = adaugare(lst_cheltuieli, 5, 1, 560, '27.11.2004', 'canal')
     lst_cheltuieli = adaugare(lst_cheltuieli, 6, 5, 700, '30.08.2004', 'canal')
-    lst_cheltuieli = run_ui(lst_cheltuieli)#lista de cheltuilei ce se obtine in urma apelatii aplicatiei
+    while True:
+        meniuri()
+        optiune = input('Alegeti interfata: ')
+        if optiune == '1':
+            run_ui(lst_cheltuieli)
+        elif optiune == '2':
+            run_in_line_console(lst_cheltuieli)
+        elif optiune == 'x':
+            break
+        else:
+            print('Optiune invalida')
 
 
 if __name__ == '__main__':

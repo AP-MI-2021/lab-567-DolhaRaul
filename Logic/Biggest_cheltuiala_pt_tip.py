@@ -3,7 +3,7 @@ from Domain.cheltuieli import get_tipul, get_suma
 
 def find_out_biggest_cheltuiala_for_tip(lst_cheltuieli):
     '''
-    Functia retunreaza cheltuiala ce are cea mai mare suma pentru fiecare tip de cheltuiala
+    Functia returneaza cheltuiala ce are cea mai mare suma pentru fiecare tip de cheltuiala
     :param lst_cheltuieli:O lista de cheltuieli
     :return:Un dictionar, unde cheia este "tipul cheltuielii" iar valoarea este "cheltuiala"(elementul listei)
     '''
