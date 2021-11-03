@@ -6,7 +6,7 @@ def show_menu_in_line():
     print('Puteti adauga cheltuieli in lista de cheltuieli, cu functia "add" si introducand valori adecvate')
     print('Puteti afisa toate cheltuielile din lista de cheltuieli, cu functia "showall"')
     print('Puteti sterge cheltuieli in lista de cheltuieli, scriind "delete" si introducand un id al unei cheltuieli existente')
-    print('Toate comenzile trebuie apelate pe o singura linie si separate prin ";" iar campurile prin ","')
+    print('Toate comenzile trebuie apelate pe o singura linie si separate prin ";" iar campurile prin ",", fara alti separatori!!!')
     print('')
 
 def add(lst_cheltuieli, id_ap, nr_ap, suma, data, tip):
