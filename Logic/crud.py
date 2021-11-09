@@ -20,6 +20,8 @@ def format_data(data):
     :return: None daca string ul este in format corect
     '''
     data_split = data.split('.')
+    if len(data_split) < 3:
+        raise ValueError(f'Data cheltuieliii {data} introdusa nu este corecta ca si format')
     if len(data_split[0]) != 2 or len(data_split[1]) != 2 or len(data_split[2]) != 4:
         raise ValueError(f'Data cheltuieliii {data} introdusa nu este corecta ca si format')
     if doar_cifre(data_split[0]) == False or doar_cifre(data_split[1]) == False or doar_cifre(data_split[2]) == False:

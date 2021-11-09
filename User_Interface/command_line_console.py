@@ -11,23 +11,28 @@ def show_menu_in_line():
 
 def add(lst_cheltuieli, id_ap, nr_ap, suma, data, tip):
     try:
-        id_ap = int(id_ap)
+        id = int(id_ap)
     except ValueError as ve:
         print('Eroare: ', ve)
+        return lst_cheltuieli
     try:
         nr_ap = int(nr_ap)
     except ValueError as ve:
         print('Eroare: ', ve)
+        return lst_cheltuieli
     try:
         suma = int(suma)
     except ValueError as ve:
         print('Eroare: ', ve)
+        return lst_cheltuieli
     try:
-        new_cheltuiala = creeaza_cheltuiala(id_ap, nr_ap, suma, data, tip)
-        lst_cheltuieli = adaugare(lst_cheltuieli, id_ap, nr_ap, suma, data, tip)
+        id = int(id_ap)
+        new_cheltuiala = creeaza_cheltuiala(id, nr_ap, suma, data, tip)
+        lst_cheltuieli = adaugare(lst_cheltuieli, id, nr_ap, suma, data, tip, [], [])
     except ValueError as ve:
         print('Eroare:', ve)
-    print('Cheltuiala s-a aduagat cu succes!')
+    else:
+        print('Cheltuiala s-a aduagat cu succes!')
     return lst_cheltuieli
 
 
@@ -38,9 +43,10 @@ def delete(lst_cheltuieli, id_ap):
         print('Eroare: ', ve)
         return lst_cheltuieli
     try:
-        lst_cheltuieli = stergere(lst_cheltuieli, id_ap)
+        lst_cheltuieli = stergere(lst_cheltuieli, id_ap, [], [])
     except ValueError as ve:
         print('Eroare:', ve)
+        return lst_cheltuieli
     print('Cheltuiala s-a sters cu succes!')
     return lst_cheltuieli
 
