@@ -29,7 +29,7 @@ def format_data(data):
     if (luna % 2 == 0 and zi > 30) or (luna % 2 == 1 and zi > 31) or (luna == 2 and zi > 28):
         raise ValueError(f'Data cheltuielii  {data} introdusa nu este corecta ca si format')
 
-def adaugare(lst_cheltuieli, id, nr_ap, suma, data, tip, undo_list, redo_list):
+def adaugare(lst_cheltuieli, id, nr_ap, suma, data, tip, undo_list, redo_list) -> list:
     '''
     Subprogramul adauga in lista "cheltuieli" noua cheltuiele cu datele introduse de utilizator
     :param lst_cheltuieli: O lista de cheltuieli

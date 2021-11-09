@@ -4,7 +4,7 @@ from Tests.Test_Afis_sume_lunare import test_get_sume_lunare
 from Tests.Test_Crud import test_adaugare, test_crud
 from Tests.Test_Ordonare_desc import test_ordonare
 from Tests.Test_Stergere_cheltuilei import test_Stergere_cheltuieli
-from Tests.Test_Undo_and_Redo import test_undo_and_redo
+from Tests.Test_Undo_and_Redo import test_undo_and_redo, Teste_For_All_Undo_And_Redo
 from Tests.Test_find_out_biggest_cheltuiala_for_tip import test_find_out_biggest_cheltuiala_for_tip
 from User_Interface.command_line_console import run_in_line_console
 from User_Interface.console import run_ui
@@ -44,6 +44,5 @@ if __name__ == '__main__':
     test_adunare_valoare_pt_data()
     test_find_out_biggest_cheltuiala_for_tip()
     test_ordonare()
-    test_get_sume_lunare()
-    test_undo_and_redo()
+    Teste_For_All_Undo_And_Redo()
     main()

@@ -12,7 +12,7 @@ def adunare_valoare_for_data(lst_cheltuieli, data: str, val: int, undo_list: lis
     :param redo_list: Lista de liste, ce se modifica in urma apelarii fiecarei Undo, sau devine lista vida cand apelam o alta functionalitate
     :return:Returneaza lista obtinuta in urma schimbarii preturilor pentru cheltuielile corespunzatoare
     '''
-    format_data(data)   #Verificam daca data introdusa de utilizator este corecta
+    format_data(data)  #Verificam daca data introdusa de utilizator este corecta
     new_lst_cheltuieli = []
     minim_o_cheltuiala = False
     for cheltuiala in lst_cheltuieli:
