@@ -1,6 +1,7 @@
 def do_undo(undo_list, redo_list, current_list):
     '''
-    Returneaza lista in urma apelarii unui Undo
+    Functia ne da lista inaintea apelarii uneia din cele 6 functionalitati, cea de dinaintea
+    schimbarii(asta pentru functionalitatile care returneaza o lista, pentru cele care se poate apela Undo)
     :param undo_list: Lista de liste de cheltuieli, ce se modifica in urma apelarii fiecarei functionalitati
     :param redo_list: Lista de liste, ce se modifica in urma apelarii fiecarei Undo, sau devine lista vida cand apelam o alta functionalitate
     :param current_list: Lista curenta de cheltuieli
@@ -16,7 +17,8 @@ def do_undo(undo_list, redo_list, current_list):
 
 def do_redo(undo_list, redo_list, current_list):
     '''
-    Returneaza lista in urma apelarii unui Redo
+    Functie ce ne da lista de cheltuieli ce trebuia sa o avem inaintea apelarii Undo ului
+    (Redo ul se poate apela doar imediat dupa ce am apelat cel putin o data un Undo)
     :param undo_list: Lista de liste de cheltuieli, ce se modifica in urma apelarii fiecarei functionalitati
     :param redo_list: Lista de liste, ce se modifica in urma apelarii fiecarei Undo, sau devine lista vida cand apelam o alta functionalitate
     :param current_list: Lista curenta de cheltuieli
